@@ -1,0 +1,51 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+    id "org.seasar.doma.compile" version "1.1.1-beta1"
+}
+
+group = 'vn.ku'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+ext['springdocVersion'] = '1.6.9'
+ext['domaVersion'] = '2.51.1'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.springframework.boot:spring-boot-starter-security')
+    implementation('org.springframework.boot:spring-boot-starter-validation')
+    implementation('org.springframework.boot:spring-boot-starter-cache')
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation('org.seasar.doma.boot:doma-spring-boot-starter:1.6.0')
+    implementation('org.flywaydb:flyway-mysql')
+
+    implementation("org.springdoc:springdoc-openapi-ui:${springdocVersion}")
+    implementation("org.springdoc:springdoc-openapi-security:${springdocVersion}")
+
+    annotationProcessor 'org.projectlombok:lombok'
+
+    implementation "org.seasar.doma:doma-core:${domaVersion}"
+    annotationProcessor "org.seasar.doma:doma-processor:${domaVersion}"
+
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'mysql:mysql-connector-java'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

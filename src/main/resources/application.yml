@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: cms-api
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:33306/cmsapi?autoreconnect=true"
+    password: "bN2Bu-/uLu?G5/6'"
+    username: "cms-user"
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  security:
+    filter:
+      order: 10
+redis:
+  custom:
+    hosts: redis
+    port: 36379
+    database: 0
+    command:
+      timeout: 500
+    socket:
+      timeout: 500
+cache:
+  redis:
+    time-to-live: 1d
+jpa:
+  open-in-view: false
+doma:
+  dialect: mysql
+  query-timeout: 60
+  sql-file-repository: no_cache
+logging:
+  level:
+    root: "debug"
+#    org.springframework.web: info
+#    org.apache: info
+#    com.zaxxer.hikari: info
+
+jwt:
+  private:.key: classpath:app.key
+  public.key: classpath:app.pub
+
+springdoc:
+  swagger-ui:
+    enabled: true
+
