@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8
+    container_name: cms-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=V]8.y_]qU{pYGj%v-!8a
+    volumes:
+      - mysql:/var/lib/mysql
+      - ./docker/db/init:/docker-entrypoint-initdb.d
+    ports:
+      - "33306:3306"
+    restart: always
+  redis:
+    image: redis:6.2.7
+    container_name: cms-redis
+    ports:
+      - "36379:6379"
+volumes:
+  mysql:
