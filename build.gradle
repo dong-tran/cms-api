@@ -38,6 +38,8 @@ dependencies {
     implementation "org.seasar.doma:doma-core:${domaVersion}"
     annotationProcessor "org.seasar.doma:doma-processor:${domaVersion}"
 
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml")
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
 

@@ -2,16 +2,20 @@ spring:
   application:
     name: cms-api
   datasource:
-    driverClassName: com.mysql.cj.jdbc.Driver
+    driverClassName: com.mysql.jdbc.Driver
     url: "jdbc:mysql://localhost:33306/cmsapi?autoreconnect=true"
     password: "bN2Bu-/uLu?G5/6'"
     username: "cms-user"
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+    dispatch-options-request: true
   security:
     filter:
       order: 10
+
+
+
 redis:
   custom:
     hosts: redis

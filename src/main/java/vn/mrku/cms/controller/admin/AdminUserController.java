@@ -11,7 +11,6 @@ import vn.mrku.cms.controller.admin.dto.UserUpdateDto;
 
 @RestController
 @RequestMapping("/admin/user")
-//@PreAuthorize("hasAuthority('SCOPE_ROOT')")
 public class AdminUserController {
     @GetMapping
     Page<UserDetailDto> list(Pageable page) {

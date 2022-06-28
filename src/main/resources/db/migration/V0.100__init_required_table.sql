@@ -69,7 +69,7 @@ CREATE TABLE cms_customer (
   email varchar(255),
   shop_name varchar(255),
   request text,
-  is_sync boolean default false not null,
+  is_synced boolean default false not null,
   is_available boolean default true not null,
   created_by numeric,
   created_at timestamp default CURRENT_TIMESTAMP not null,

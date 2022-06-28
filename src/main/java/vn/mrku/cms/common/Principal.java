@@ -1,13 +1,11 @@
 package vn.mrku.cms.common;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-@RequiredArgsConstructor
 public class Principal {
 
     @ModelAttribute
