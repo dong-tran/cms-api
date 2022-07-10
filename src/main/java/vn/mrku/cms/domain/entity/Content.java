@@ -13,8 +13,7 @@ import java.time.LocalDateTime;
 @Entity(naming = NamingType.SNAKE_LOWER_CASE)
 public class Content {
     @Id
-    @SequenceGenerator(sequence = "cms_content_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int contentId;
     int categoryId;
     int orderNumber;

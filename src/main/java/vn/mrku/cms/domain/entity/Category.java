@@ -13,12 +13,13 @@ import java.time.LocalDateTime;
 @Entity(naming = NamingType.SNAKE_LOWER_CASE)
 public class Category {
     @Id
-    @SequenceGenerator(sequence = "cms_category_seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int categoryId;
+    Integer parentId;
     String name;
     int orderNumber;
     boolean isAvailable;
+    boolean isPublic;
     @Column(updatable = false)
     int createdBy;
     @Column(updatable = false)
